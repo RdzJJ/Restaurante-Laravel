@@ -13,18 +13,18 @@ class CreateBuysTable extends Migration
      */
     public function up()
     {
-        Schema::create('Buys', function (Blueprint $table) {
+        Schema::create('buys', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('id_Sale')
                   ->onUpdate('cascade')
                   ->onDelete('cascade')
-                  ->constrained('Sales');
+                  ->constrained('sales');
 
-            $table->foreignId('id_Product')
+            $table->foreignId('id_product')
                   ->onUpdate('cascade')
                   ->onDelete('cascade')
-                  ->constrained('Products');
+                  ->constrained('products');
 
 
             $table->float("Price");
@@ -41,6 +41,6 @@ class CreateBuysTable extends Migration
 //
     public function down()
     {
-        Schema::dropIfExists('Buys');
+        Schema::dropIfExists('buys');
     }
 }

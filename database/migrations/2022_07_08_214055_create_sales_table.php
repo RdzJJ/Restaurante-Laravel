@@ -13,7 +13,7 @@ class CreateSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('Sales', function (Blueprint $table) {
+        Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')
                   ->onUpdate('cascade')
@@ -26,6 +26,6 @@ class CreateSalesTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('Sales');
+        Schema::dropIfExists('sales');
     }
 }
